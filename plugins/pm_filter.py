@@ -53,8 +53,8 @@ async def give_filter(client, message):
             settings = await get_settings(message.chat.id)
             if settings['auto_ffilter']:
                 await auto_filter(client, message) 
-
-async def pm_text(client, message):
+      
+async def pm_text(bot, message):
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
