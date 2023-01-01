@@ -37,7 +37,7 @@ BUTTONS = {}
 SPELL_CHECK = {}
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
-async def pm_text(client, message):
+async def pm_text(bot, message):
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
