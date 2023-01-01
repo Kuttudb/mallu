@@ -252,28 +252,28 @@ async def next_page(bot, query):
 
 
 @Client.on_callback_query(filters.regex(r"^spol"))
-async def advantage_spoll_choker(bot, query):
-    _, user, movie_ = query.data.split('#')
-    movies = SPELL_CHECK.get(query.message.reply_to_message.id)
+async def advantage_spoll_choker(bot: Client, quer_y: CallbackQuery):
+    _, user, movie_ = quer_y.data.split('#')
+    movies = SPELL_CHECK.get(quer_y.message.reply_to_message.id)
     if not movies:
-        return await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=True)
-    if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
+        return await quer_y.answer(script.OLD_ALRT_TXT.format(quer_y.from_user.first_name), show_alert=True)
+    if int(user) != 0 and quer_y.from_user.id != int(user):
+        return await quer_y.answer(script.ALRT_TXT.format(quer_y.from_user.first_name), show_alert=True)
     if movie_ == "close_spellcheck":
-        return await query.message.delete()
+        return await quer_y.message.delete()
     movie = movies[(int(movie_))]
-    await query.answer(script.TOP_ALRT_MSG)
-    k = await manual_filters(bot, query.message, text=movie)
+    await quer_y.answer(script.TOP_ALRT_MSG)
+    k = await manual_filters(bot, quer_y.message, text=movie)
     if k == False:
-        files, offset, total_results = await get_search_results(query.message.chat.id, movie, offset=0, filter=True)
+        files, offset, total_results = await get_search_results(quer_y.message.chat.id, movie, offset=0, filter=True)
         if files:
             k = (movie, files, offset, total_results)
-            await auto_filter(bot, query, k)
+            await auto_filter(bot, quer_y, k)
         else:
-            reqstr1 = query.from_user.id if query.from_user else 0
+            reqstr1 = quer_y.from_user.id if quer_y.from_user else 0
             reqstr = await bot.get_users(reqstr1)
             await bot.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, movie)))
-            k = await query.message.edit(script.MVE_NT_FND)
+            k = await quer_y.message.edit(script.MVE_NT_FND)
             await asyncio.sleep(10)
             await k.delete()
 
