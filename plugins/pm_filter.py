@@ -53,7 +53,7 @@ async def give_filter(client, message):
             if settings['auto_ffilter']:
                 await auto_filter(client, message) 
 
-@Client.on_message(filters.private & filters.text & filters.incoming, group=0)
+@Client.on_message(filters.private & filters.text & filters.incoming, group=1)
 async def pm_text(bot, message):
     content = message.text
     user = message.from_user.first_name
