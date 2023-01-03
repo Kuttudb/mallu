@@ -1272,6 +1272,7 @@ async def auto_filter(client, msg, spoll=False):
                 k = await msg.reply_photo(
             photo=SPELL_IMG, 
             caption=script.I_CUDNT.format(search)
+            reply_markup=InlineKeyboardMarkup(button)
         )
                     await asyncio.sleep(30)
                     await k.delete()
