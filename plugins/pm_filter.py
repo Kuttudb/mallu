@@ -1266,7 +1266,7 @@ async def auto_filter(client, msg, spoll=False):
                 else:
                     await msg.reply_photo(
             photo=SPELL_IMG, 
-            caption=script.I_CUDNT.format(mv_rqst)
+            caption=script.I_CUDNT.format(search)
         )
                     await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, search)))
                     return
