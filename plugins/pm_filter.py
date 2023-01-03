@@ -1264,11 +1264,17 @@ async def auto_filter(client, msg, spoll=False):
                 if settings["spell_check"]:
                     return await advantage_spell_chok(client, msg)
                 else:
-                    await msg.reply_photo(
+                    reqst_ggl = search.replace(" ", "+")
+                    button = [[
+                   InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_ggl}")
+        ]]
+                    await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, search)))
+                k = await msg.reply_photo(
             photo=SPELL_IMG, 
             caption=script.I_CUDNT.format(search)
         )
-                    await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, search)))
+                    await asyncio.sleep(30)
+                    await k.delete()
                     return
         else:
             return
