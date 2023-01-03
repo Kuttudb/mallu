@@ -1269,15 +1269,12 @@ async def auto_filter(client, msg, spoll=False):
                    InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_ggl}")
         ]]
                     await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, search)))
-                k = await msg.reply_photo(
+                    await msg.reply_photo(
             photo=SPELL_IMG, 
             caption=script.I_CUDNT.format(search),
             reply_markup=InlineKeyboardMarkup(button)
         )
 
-            await asyncio.sleep(60)
-        await k.delete()
-            return
     else:
         settings = await get_settings(msg.message.chat.id)
         message = msg.message.reply_to_message  # msg will be callback query
