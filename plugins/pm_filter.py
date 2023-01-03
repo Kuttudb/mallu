@@ -1277,7 +1277,6 @@ async def auto_filter(client, msg, spoll=False):
 
             await asyncio.sleep(60)
         await k.delete()
-        else:
             return
     else:
         settings = await get_settings(msg.message.chat.id)
