@@ -1267,7 +1267,7 @@ async def auto_filter(client, msg, spoll=False):
                     reqst_ggl = search.replace(" ", "+")
                     button = [[
                    InlineKeyboardButton("🔍 Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_ggl}")
-        ]]
+        ]],
                      supportbt = [[
                    InlineKeyboardButton("💬 Rᴇǫᴜᴇsᴛ Nᴏᴡ", url=f"https://t.me/+I02d5z9I0PoyNWM1")
         ]]
