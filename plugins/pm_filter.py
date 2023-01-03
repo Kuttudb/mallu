@@ -1269,11 +1269,11 @@ async def auto_filter(client, msg, spoll=False):
                    InlineKeyboardButton("🔍 Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_ggl}")
         ]]
                      supportbt = [[
-                   InlineKeyboardButton("💬 Rᴇǫᴜᴇsᴛ Nᴏᴡ", url=f"https://www.google.com/search?q={reqst_ggl}")
+                   InlineKeyboardButton("💬 Rᴇǫᴜᴇsᴛ Nᴏᴡ", url=f"https://t.me/+I02d5z9I0PoyNWM1")
         ]]
                     await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTSBT.format(reqstr.id, reqstr.mention, search)))
                     await msg.reply_photo(
-            photo=SPELL_IMG, 
+            photo=https://telegra.ph/file/a01f590a771a5ae87e39d.mp4, 
             caption=script.I_CUDNT.format(search),
             reply_markup=InlineKeyboardMarkup(button),
             reply_markup=InlineKeyboardMarkup(supportbt)
