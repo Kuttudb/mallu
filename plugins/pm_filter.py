@@ -1271,10 +1271,10 @@ async def auto_filter(client, msg, spoll=False):
        
         ]]
                      
-                    await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTSBT.format(reqstr.id, reqstr.mention, search)))
+                    await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, search)))
                     await msg.reply_photo(
             photo=NORST_IMG, 
-            caption=script.I_CUDNT.format(search),
+            caption=script.NORSLTSBT.format(search),
             reply_markup=InlineKeyboardMarkup(button),
  
         )
