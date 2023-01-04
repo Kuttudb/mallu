@@ -25,6 +25,7 @@ PICS = (environ.get('PICS', 'https://telegra.ph/file/419b9e4d215f0d417594e.jpg')
 NOR_IMG = environ.get("NOR_IMG", "https://telegra.ph/file/46443096bc6895c74a716.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/080a812288c65000f0d47.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/5e2d4418525832bc9a1b9.jpg")
+NORST_IMG = environ.get("NORST_IMG", "https://telegra.ph/file/d20022572ab511e85d4a0.jpg")
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
