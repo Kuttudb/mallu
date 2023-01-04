@@ -1266,17 +1266,17 @@ async def auto_filter(client, msg, spoll=False):
                 else:
                     reqst_ggl = search.replace(" ", "+")
                     button = [[
-                   InlineKeyboardButton("🔍 Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_ggl}")
-        ]]
-                     supportbt = [[
+                   InlineKeyboardButton("🔍 Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_ggl}"),
                    InlineKeyboardButton("💬 Rᴇǫᴜᴇsᴛ Nᴏᴡ", url=f"https://t.me/+I02d5z9I0PoyNWM1")
+       
         ]]
+                     
                     await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTSBT.format(reqstr.id, reqstr.mention, search)))
                     await msg.reply_photo(
             photo=NORST_IMG, 
             caption=script.I_CUDNT.format(search),
             reply_markup=InlineKeyboardMarkup(button),
-            reply_markup=InlineKeyboardMarkup(supportbt)
+ 
         )
 
     else:
