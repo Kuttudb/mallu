@@ -856,7 +856,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton('🏠 Hᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('😊 Aʙᴏᴜᴛ', callback_data='about'),
-                    InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
+                    InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
+                    InlineKeyboardButton('𝚈𝚃-𝙳𝙻', callback_data='ytdl')
+
+            ]
                 ],[
                     InlineKeyboardButton('🔰 Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ 🔰', url=CHNL_LNK)
                   ]]
@@ -894,7 +897,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+ elif query.data == "ytdl":
 
+        buttons = [[
+
+            InlineKeyboardButton('𝙱𝙰𝙲𝙺', callback_data='help')
+
+        ]]
+
+        reply_markup = InlineKeyboardMarkup(buttons)
+
+        await query.edit_message_media(
+
+            InputMediaPhoto(random.choice(PICS), script.YTDL, enums.ParseMode.HTML),            
+
+            reply_markup=reply_markup,
+
+        )
     elif query.data == "global_filters":
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='filters')
